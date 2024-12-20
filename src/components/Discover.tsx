@@ -12,7 +12,7 @@ import React from 'react'
 const Discover:React.FC = () => {
   return (
     <div className="px-4 mt-16 flex flex-col  items-center my-20">
-      <h1 className="text-3xl w-4/5 text-center text-green font-bold">
+      <h1 className="text-3xl  text-center text-green font-bold">
         Discover Ayurveda’s magic with us
       </h1>
       <p className="text-lg text-center mt-4 mx-1 text-lightText">

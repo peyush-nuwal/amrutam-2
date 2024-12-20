@@ -96,28 +96,28 @@ const doctors: Doctor[] = [
               className="h-[85%] w-full flex flex-col
                justify-center items-center"
             >
-              <div className="w-38 h-38 rounded-full overflow-hidden">
+              <div className="w-28 h-28 rounded-full overflow-hidden">
                 <img
                   src={doc.img}
                   alt="doctor img"
                   className="w-full h-full object-cover object-center"
                 />
               </div>
-              <h1 className="font-bold text-xl mt-3">{doc.name}</h1>
-              <h3 className="text-lightText">
+              <h1 className="font-bold text-lg mt-3">{doc.name}</h1>
+              <h3 className="text-lightText text-sm">
                 {doc.title} {doc.qualification}
               </h3>
-              <h5 className="flex items-center text-lg gap-2 mt-2">
-                <GoMortarBoard className="text-green w-6 h-6" />
+              <h5 className="flex items-center text-base gap-2 mt-2">
+                <GoMortarBoard className="text-green w-4 h-4" />
                 {doc.experience}
               </h5>
 
-              <button className=" bg-green/20 rounded-2xl text-green  flex items-center gap-2 px-5 py-1 mt-5 text-lg">
+              <button className=" bg-green/20 rounded-2xl text-green  flex items-center gap-2 px-4 py-1 mt-5 ">
                 <IoIosLink />
                 {doc.specialty}
               </button>
             </div>
-            <h1 className=" h-[15%]  text-white text-2xl  flex items-center justify-center bg-green">
+            <h1 className=" h-[15%]  text-white text-xl  flex items-center justify-center bg-green">
               {doc.bookSession}
             </h1>
           </div>
@@ -128,7 +128,7 @@ const doctors: Doctor[] = [
           <div
             key={idx}
             onClick={() => scrollToCard(idx)}
-            className={`w-4 h-4 rounded-full cursor-pointer ${
+            className={`w-3 h-3 rounded-full cursor-pointer ${
               activeIndex === idx ? "bg-green" : "bg-gray-300"
             }`}
           ></div>

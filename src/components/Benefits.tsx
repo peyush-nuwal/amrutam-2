@@ -50,7 +50,7 @@ const Benefits:React.FC = () => {
             />
           </div>
 
-          <h2 className="   text-2xl    font-bold text-green">
+          <h2 className="   text-xl    font-bold text-green">
             {item.title}
           </h2>
         </div>

@@ -99,7 +99,7 @@ const Approach:React.FC = () => {
           <div
             key={index}
             onClick={() => scrollToCard(index)}
-            className={`w-4 h-4 rounded-full cursor-pointer ${
+            className={`w-3 h-3 rounded-full cursor-pointer ${
               activeIndex === index ? "bg-green" : "bg-gray-300"
             }`}
           ></div>

@@ -90,7 +90,7 @@ const Links: link[] = [
           <input
             type="text"
             placeholder="Enter Email"
-            className="rounded-l-full w-56 h-[50px] bg-transparent border-[1px] border-green pl-4"
+            className="rounded-l-full w-48 h-[50px] bg-transparent border-[1px] border-green pl-4"
           />
           <button className="rounded-r-full h-[50px]  bg-black text-white text-lg px-6 py-2 border-[1px] border-green tracking-wider">
             {" "}

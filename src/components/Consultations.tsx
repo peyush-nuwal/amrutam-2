@@ -7,7 +7,7 @@ import ay3 from "/ay-3.png";
 const Consultations: React.FC = () => {
   return (
     <div className="bg-offYellow w-full mt-12 px-4 py-16 ">
-      <h1 className="text-3xl w-4/5 ml-[10%] font-bold text-green text-center">
+      <h1 className="text-3xl font-bold text-green text-center">
         What sets Ayurvedic consultations apart?
       </h1>
 

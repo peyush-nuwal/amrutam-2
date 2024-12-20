@@ -139,17 +139,17 @@ const Review :React.FC= () => {
                   />
                 </div>
                 <div>
-                  <h1 className="font-semibold text-lg px-3 ">{user.name}</h1>
+                  <h1 className="font-semibold text-lg  ">{user.name}</h1>
                   <h5 className="px-3">{user.city}</h5>
                 </div>
 
                 <h5>{user.date}</h5>
               </div>
 
-              <h1 className="text-2xl font-semibold mt-10 mb-2 ">
+              <h1 className="text-xl font-semibold mt-10 mb-2 ">
                 “{user.title}”
               </h1>
-              <p className="text-">{user.desc}</p>
+              <p className="text-sm">{user.desc}</p>
             </div>
           </div>
         ))}
@@ -157,7 +157,7 @@ const Review :React.FC= () => {
       <div className="flex justify-center gap-2 mt-4">
         {reviews.map((_,idx)=>(
           <div  key={idx}
-            onClick={() => scrollToCard(idx)} className={`w-4 h-4 rounded-full cursor-pointer ${
+            onClick={() => scrollToCard(idx)} className={`w-3 h-3 rounded-full cursor-pointer ${
               activeIndex === idx ? "bg-green" : "bg-gray-300"
             }`}>
 
