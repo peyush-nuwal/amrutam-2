@@ -36,11 +36,11 @@ const Benefits:React.FC = () => {
   ];
 
   return (
-    <div className="bg-offYellow flex flex-col  ">
+    <div className="bg-offYellow flex flex-col lg:flex-row  ">
       {benefits.map((item) => (
         <div
           key={item.id}
-          className=" py-6 px-6 flex gap-4   justify-start  items-center     border-b-2 border-stone-300"
+          className=" py-6 px-6 flex gap-4   justify-start  items-center     border-b-2 lg:border border-stone-300"
         >
           <div className="w-16 h-16 p-3 rounded-full bg-white border-2 border-green flex justify-center items-center  shrink-0">
             <img

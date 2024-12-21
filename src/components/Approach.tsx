@@ -64,10 +64,10 @@ const Approach:React.FC = () => {
         }
   return (
     <div className="w-full my-20 px-4 h-screen ">
-      <h1 className="text-3xl w-4/5 ml-[10%] text-center text-green font-bold">
+      <h1 className="text-3xl lg:text-4xl  w-4/5 ml-[10%] text-center text-green font-bold">
         Our ayurvedic approach
       </h1>
-      <p className="text-lg text-center mt-4  text-lightText">
+      <p className="w-auto lg:w-6/12 m-auto  text-lg text-center mt-4  text-lightText">
         At Amrutam we follow a unique and personalized approach to healing. Our
         expert practitioners begin each treatment process by conducting a
         thorough analysis of the patient’s body type, medical history, and
@@ -76,12 +76,12 @@ const Approach:React.FC = () => {
 
       <div
         ref={containerRef}
-        className="w-full  overflow-x-scroll flex py-16  scroll-smooth"
+        className="w-full lg:w-5/6 mx-auto  overflow-x-scroll flex py-16  scroll-smooth hide-scrollbar"
       >
         {approach.map((card) => (
           <div
             key={card.id}
-            className="bg-offYellow border-green border-t-8  w-4/5 shrink-0 ml-6 rounded-3xl flex flex-col justify-start items-center gap-2 px-6 py-12"
+            className="bg-offYellow border-green border-t-8  w-4/5 lg:max-w-[300px] shrink-0 ml-6 rounded-3xl flex flex-col justify-start items-center gap-2 px-6 py-12"
           >
             <div className="text-white bg-green/60 border-green border-2 rounded-full  w-20 h-20  text-4xl shrink-0 flex justify-center items-center ">
               {card.id}
@@ -94,7 +94,7 @@ const Approach:React.FC = () => {
         ))}
       </div>
 
-      <div className="flex justify-center gap-2 mt-4">
+      <div className="flex lg:hidden justify-center gap-2 mt-4">
         {approach.map((_, index) => (
           <div
             key={index}

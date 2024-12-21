@@ -73,6 +73,17 @@ const Review :React.FC= () => {
       img: "/anupan.jpeg",
       bg: "#ECFEE7",
     },
+    {
+      id: 6,
+      name: "anupam khair",
+      date: "19/02/24",
+      city: "Bangalore",
+      title: "Exceptional results",
+      desc: "Had a fantastic experience! The consultation was thorough and the results speak for themselves.",
+      problem: "Consulted for Hair",
+      img: "/anupan.jpeg",
+      bg: "#ECFEE7",
+    },
   ];
 
   const [activeIndex, setActiveIndex] = useState<number>(0);
@@ -83,9 +94,11 @@ const Review :React.FC= () => {
      const container=containerRef.current;
      if(!container)return;
 
-    const cardWidth=container.scrollWidth/reviews.length;
+   const isMobile = window.innerWidth < 1024;
+   const cardsPerPage = isMobile ? 1 : 3;
+   const cardWidth = container.scrollWidth / reviews.length;
     const scrollLeft=container.scrollLeft
-    const currentIndex=Math.round(scrollLeft/cardWidth)
+    const currentIndex = Math.floor(scrollLeft / cardWidth / cardsPerPage);
     setActiveIndex(currentIndex)
   }
 
@@ -102,25 +115,30 @@ const Review :React.FC= () => {
     const container=containerRef.current;
     if(!container)return;
 
-    const cardWidth=container.scrollWidth/reviews.length;
+    const isMobile = window.innerWidth < 1024;
+    const cardsPerPage = isMobile ? 1 : 3;
+    const cardWidth = container.scrollWidth / reviews.length;
 
-    container.scrollTo({left:cardWidth*index,behavior:'smooth'})
+    container.scrollTo({
+      left: cardWidth * index * cardsPerPage,
+      behavior: "smooth",
+    });
   }
   
   return (
     <div className="h-[80vh] bg-offYellow w-full px-4 py-16">
-      <h1 className="text-3xl   font-bold text-green text-center overflow-hidden">
+      <h1 className="text-3xl lg:text-4xl   font-bold text-green text-center overflow-hidden">
         {" "}
         STORIES FROM OUR VALUED CUSTOMERS!
       </h1>
       <div
-           ref={containerRef}
-        className="w-full  h-[45vh] my-10 flex overflow-x-scroll"
+        ref={containerRef}
+        className="w-full lg:w-4/5 mx-auto h-[45vh] my-10 flex overflow-x-scroll hide-scrollbar"
       >
         {reviews.map((user) => (
           <div
             key={user.id}
-            className=" w-4/5 h-full shrink-0 bg-white  ml-5 rounded-3xl  overflow-hidden"
+            className=" w-4/5 lg:max-w-[350px] h-full shrink-0 bg-white  ml-5 lg:ml-20 rounded-3xl  overflow-hidden"
           >
             <h1
               className="h-[15%] text-xl font-semibold py-3 px-5 "
@@ -138,9 +156,11 @@ const Review :React.FC= () => {
                     className="w-full h-full object-cover  object-center"
                   />
                 </div>
-                <div>
-                  <h1 className="font-semibold text-lg  ">{user.name}</h1>
-                  <h5 className="px-3">{user.city}</h5>
+                <div className="w-full px-2">
+                  <h1 className="font-semibold text-lg   w-full ">
+                    {user.name}
+                  </h1>
+                  <h5 className="px-3 w-full">{user.city}</h5>
                 </div>
 
                 <h5>{user.date}</h5>
@@ -155,13 +175,14 @@ const Review :React.FC= () => {
         ))}
       </div>
       <div className="flex justify-center gap-2 mt-4">
-        {reviews.map((_,idx)=>(
-          <div  key={idx}
-            onClick={() => scrollToCard(idx)} className={`w-3 h-3 rounded-full cursor-pointer ${
+        {Array.from({ length: Math.ceil(reviews.length / 3) }).map((_, idx) => (
+          <div
+            key={idx}
+            onClick={() => scrollToCard(idx)}
+            className={`w-3 h-3 rounded-full cursor-pointer ${
               activeIndex === idx ? "bg-green" : "bg-gray-300"
-            }`}>
-
-          </div>
+            }`}
+          ></div>
         ))}
       </div>
     </div>

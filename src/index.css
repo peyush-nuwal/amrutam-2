@@ -13,15 +13,49 @@ html,body{
   width: 100%;
   height: 100%;
 }
+.hide-scrollbar {
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and other WebKit browsers */
+}
+/* Style for the scrollbar track */
+/* Vertical scrollbar */
+*::-webkit-scrollbar {
+  width: 8px; /* Vertical scrollbar width */
+  height: 3px; /* Horizontal scrollbar height */
+}
+
+/* Scrollbar track */
+*::-webkit-scrollbar-track {
+  background: #c3c3c3; /* Light gray track */
+  border-radius: 8px; /* Smooth edges */
+}
+
+/* Scrollbar thumb */
+*::-webkit-scrollbar-thumb {
+  background: #444; /* Dark gray thumb */
+  border-radius: 8px; /* Smooth edges */
+}
+
+/* Hover effect for scrollbar thumb */
+*::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Slightly lighter gray on hover */
+}
+
 
 
 @layer components {
   .btn {
-    @apply px-6 py-4 rounded-md  text-white font-medium transition-colors duration-300 ;
+    @apply px-6 py-4 md:py-2 rounded-md  text-white font-medium transition-colors duration-300 ;
   }
 
   .btn-primary {
-    @apply bg-[#3A643B] hover:bg-[#2e4d2e];
+    @apply bg-[#3A643B] hover:bg-offYellow hover:text-green border-[1px] border-green;
   }
-
+ .btn-transparent{
+      @apply bg-transparent border-[1px] border-green text-green hover:bg-[#2e4d2e] hover:text-offYellow;
+ }
 }
